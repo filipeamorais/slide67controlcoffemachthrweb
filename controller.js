@@ -13,7 +13,7 @@ app.get('/coffeeMaker/on', (req,res)=>{
         res.end('Coffee Maker not connected')
         return}
 
-    //client.publish('controller', 'status')
+    client.publish('controller', 'status')
     if(state='on'){
         res.end('Coffee maker is already on')
         return}
