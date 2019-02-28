@@ -1,0 +1,25 @@
+{
+  "name": "slide67controlcoffemachthrweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "coffeemaker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipeamorais/slide67controlcoffemachthrweb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipeamorais/slide67controlcoffemachthrweb/issues"
+  },
+  "homepage": "https://github.com/filipeamorais/slide67controlcoffemachthrweb#readme",
+  "dependencies": {
+    "colors": "^1.3.3",
+    "express": "^4.16.4",
+    "mqtt": "^2.18.8"
+  }
+}

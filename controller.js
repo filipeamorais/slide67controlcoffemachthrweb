@@ -47,7 +47,7 @@ client.on('connect', ()=>{
     client.subscribe('coffeemaker/state')
 })
 
-client.on('message', ()=>{
+client.on('message', (topic, message)=>{
     if(topic=='coffeemaker/connected'){
         if (message=='true')connected=true
         else connected=false

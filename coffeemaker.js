@@ -2,7 +2,7 @@ const colors = require ('colors')
 const mqtt = require ('mqtt')
 const express = require('express')
 
-const client = mqtt.connect('mqtt://127.0.0')
+const client = mqtt.connect('mqtt://127.0.0.1')
 app = express()
 
 var state = 'off'
@@ -11,11 +11,11 @@ console.log(state.yellow)
 client.on('connect', ()=>{
     console.log('Coffee Maker connected to MQTT Broker'.green)
     client.subscribe('controller')
-    client.publish('coffeemaker/connected', 'true',{'retrain':true})
-    client.publish('coffeemaker/state', 'on',{'retrain':true})
+    client.publish('coffeemaker/connected', 'true',{'retain':true})
+    client.publish('coffeemaker/state', state,{'retain':true})
 })
 
-client.on('message', ()=>{
+client.on('message', (topic, message)=>{
     console.log(("received"+message).red)
     if (topic=='controller'){
         if(message=='turn on')
